@@ -1,13 +1,9 @@
-import "./App.css";
+import AppRoutes from "./routes/appRoutes";
 
 function App() {
   return (
     <>
-      <section id="center">
-        <div>
-          <h1>Semcart</h1>
-        </div>
-      </section>
+      <AppRoutes />
     </>
   );
 }
