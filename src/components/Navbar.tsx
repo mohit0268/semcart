@@ -3,14 +3,12 @@ import { Link } from "react-router";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  
   return (
     <nav className="w-full border-b border-gray-200 bg-white px-8 py-4">
       <div className="max-w-8xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <Link to='/cart' 
-        className="text-xl font-black tracking-tight text-black"/>
-          SEMCART
+        <div className="text-xl font-black tracking-tight text-black">
+          <Link to="/">SEMCART</Link>
+        </div>
 
         {/* Icons */}
         <div className="hidden md:flex items-center gap-5">
@@ -50,27 +48,26 @@ const Navbar = () => {
           </button>
 
           <button className="relative text-gray-700 hover:text-black transition-colors duration-200">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-              />
-            </svg>
-            <span className="absolute -top-1 -right-1 h-2 w-2 bg-black rounded-full"></span>
-            
+            <Link to="/cart">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                />
+              </svg>
+              <span className="absolute -top-1 -right-1 h-2 w-2 bg-black rounded-full"></span>
+            </Link>
           </button>
-          
         </div>
 
-        {/* Mobile: hamburger */}
         <button
           className="md:hidden text-gray-700 hover:text-black transition-colors duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -108,12 +105,8 @@ const Navbar = () => {
           )}
         </button>
       </div>
-
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4 flex flex-col gap-4 px-2">
-          
-
           {/* Mobile icons row */}
           <div className="flex items-center gap-5 pt-2">
             <button className="text-gray-700 hover:text-black transition-colors duration-200">
@@ -148,25 +141,26 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            <Link to="/Cart">
+
             <button className="relative text-gray-700 hover:text-black transition-colors duration-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.5}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                />
-              </svg>
-              <span className="absolute -top-1 -right-1 h-2 w-2 bg-black rounded-full"></span>
+              <Link to="/cart">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
+                </svg>
+                <span className="absolute -top-1 -right-1 h-2 w-2 bg-black rounded-full"></span>
+              </Link>
             </button>
-            </Link>
           </div>
         </div>
       )}
