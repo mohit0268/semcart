@@ -3,7 +3,11 @@ export interface Product {
     title:string,
     price:number,
     images:string[],
+    slug:string,
+    description:string
+
 }
+
 
 export interface Category{
     id:number,
@@ -19,4 +23,10 @@ export interface CartState {
   items: CartItem[];
   totalItems: number;
   totalPrice: number;
+}
+
+export interface CartContextType {
+  cartItems: CartItem[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (id: number) => void;
 }

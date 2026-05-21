@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getProductById } from '../apis/productData'
 
-const useProductById = (id:string) => {
+const useProductById = (id:number) => {
   return useQuery({
     queryKey:["product",id],
     queryFn: () => getProductById(id),
