@@ -14,7 +14,7 @@ export const getProducts = async () => {
   }
 };
 
-export const getProductById = async (id: string) => {
+export const getProductById = async (id: number) => {
   try {
     const response = await fetch(`${BASE_URL}/${id}`);
     if (!response.ok) {
@@ -27,3 +27,5 @@ export const getProductById = async (id: string) => {
     throw error;
   }
 };
+
+
