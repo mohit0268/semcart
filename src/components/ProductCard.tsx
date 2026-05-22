@@ -14,7 +14,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     
     <div className="my-10 mx-4 group bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
-      <Link to={`/products/${product.id}`}/>
+      <Link to={`/products/${product.id}`}>
       <div className="overflow-hidden bg-gray-100">
         <img
           className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -24,6 +24,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           alt={product.title}
         />
       </div>
+      </Link>
 
       {/* Product Details */}
       <div className="p-4 flex flex-col justify-between h-55">
@@ -36,14 +37,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {product.description}
           </p>
         </div>
-        
 
         {/* Price + Button */}
         <div className="mt-4 flex items-center justify-between">
           <span className="text-lg md:text-xl font-bold text-indigo-600">
             ₹{product.price}
           </span>
-          
+
           <button
             onClick={() => {
               addToCart(product);
@@ -56,7 +56,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </div>
     </div>
-    
   );
 };
 
