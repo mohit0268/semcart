@@ -5,6 +5,7 @@ export interface Product {
     images:string[],
     slug:string,
     description:string
+    category:Category
 
 }
 
